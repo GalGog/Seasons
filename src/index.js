@@ -21,6 +21,13 @@ class App extends React.Component {
     }
 
 
+    componentDidMount() {
+        console.log ("my comp was rendered to the screen")
+    }
+
+    componentDidUpdate() {
+        console.log ("my comp was just updated -it rendered")
+    }
     // React says we hate to define render!
     //Conditionally Rendering Content
     render() {
