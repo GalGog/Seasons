@@ -17,9 +17,7 @@ class App extends React.Component {
     }
 
 
-    // React says we hate to define render!
-    //Conditionally Rendering Content
-    render() {
+    renderContnt(){
         if (this.state.errorMessage && !this.state.lat){
             return <div>Erroe: {this.state.errorMessage}</div>;
         }
@@ -28,7 +26,14 @@ class App extends React.Component {
             return <SeasonDisplay lat={this.state.lat} />
         }
 
-        return <Spinner />;
+        return <Spinner  message="Please accept  colation request" />;
+
+    }
+
+    // React says we hate to define render!
+    //Conditionally Rendering Content
+    render() {
+       return <div className="border red">{this.renderContnt()}</div>;
     }
 }
 
